@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-portfolio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: personal-portfolio
+  template:
+    metadata:
+      labels:
+        app: personal-portfolio
+    spec:
+      containers:
+        - name: personal-portfolio
+          image: kavindu1w3/personal-portfolio:latest
+          ports:
+            - containerPort: 3000
